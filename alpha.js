@@ -8,13 +8,13 @@ images[2] = new Image();
 images[3] = new Image();
 
 images[0].onload = function() {}
-images[0].src="flower1.jpg";
+images[0].src="flower1.png";
 images[1].onload = function() { }
-images[1].src="flower2.jpg";
+images[1].src="flower2.png";
 images[2].onload = function() {}
-images[2].src="fractal.jpg";
+images[2].src="fractal.png";
 images[3].onload = function() {}
-images[3].src="buddha.jpg";
+images[3].src="buddha.png";
 	
 
 window.addEventListener("load", Init, false);
@@ -55,7 +55,7 @@ function changeFrame() {
 }
 
 function canvasMain() {
-	can_obj = new canvasObject(320, 240);
+	can_obj = new canvasObject(640, 360);
 }
 
 var theCanvas, context;
@@ -82,7 +82,7 @@ function canvasObject(w, h) {
 		var offset = 0;
 		context.drawImage(images[picture_index], 0, 0);
 	//	bdata = context.getImageData(0, 0, images[picture_index].width, images[picture_index].height);
-		bdata = context.getImageData(0,0,320,240);		
+		bdata = context.getImageData(0,0,640,360);		
 		for(var y = 0; y < images[picture_index].height; ++y) {
 			for(var x = 0; x < images[picture_index].width; ++x) {
 				var offset = (x*4)+(y*4)*images[picture_index].width;
